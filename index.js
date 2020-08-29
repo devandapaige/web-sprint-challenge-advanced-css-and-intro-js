@@ -258,15 +258,23 @@ console.log(getArtistByIndex(artists, 12));
 function get20s(array) {
   let years = array.years(/-/g, " ");
   parseInt(array.years);
-  console.log(array.years);
-  let i = 0;
-  for (i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (array[i].years > 1900 && array[i].years < 2000) {
       console.log(array[i].name);
     }
   }
 }
 console.log(get20s(artists));
+
+function get20s2(array) {
+  let years = [];
+  for (let i = 0; i < array.length; i++) {
+    if (parseInt(array[i].years) >= 1900) {
+      years.push(array[i].name);
+    }
+  }
+}
+console.log(get20s2(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
